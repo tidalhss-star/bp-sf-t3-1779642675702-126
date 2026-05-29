@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="bpaas-design-system" content="brutalist-avantgarde">
+  <meta name="bpaas-design-theme" content="kr-neon-void">
+  <meta name="description" content="마포 서버 웜업의 기준을 다시 세운다. 강남 셔츠룸 인프라를 위한 냉정한 최적화. 규칙을 깨고, 속도를 얻어라. 상담: 010-6279-0862">
+  <meta name="keywords" content="서버 웜업, 강남 셔츠룸, 마포 서버 최적화, 웜업 서비스, 서버 가동, 셔츠룸 인프라, 정보">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sf-t3-1779642675702-126.pages.dev/info">
+  <meta property="og:title" content="SF-T3 | 서버 웜업 정보 – 강남 셔츠룸 인프라 가속기">
+  <meta property="og:description" content="마포 기반 서버 웜업 전문. 느린 시스템은 용납하지 않는다. 진짜 정보를 원한다면 010-6279-0862">
+  <title>SF-T3 | 정보 – 마포 서버 웜업 & 강남 셔츠룸 최적화</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      background: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #ff2a6d;
+      text-decoration: underline wavy 2px;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #05d9e8;
+    }
+    ul, ol {
+      list-style: none;
+      padding-left: 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-shadow: 4px 4px 0 #ff2a6d, -2px -2px 0 #05d9e8;
+      word-break: break-word;
+    }
+    h2 {
+      font-size: 2.5rem;
+      border-bottom: 4px solid #ff2a6d;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    p, li, blockquote {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    blockquote {
+      border-left: 6px solid #05d9e8;
+      padding-left: 1.5rem;
+      font-style: italic;
+      margin: 1.5rem 0;
+      background: rgba(5, 217, 232, 0.05);
+    }
+
+    /* ===== LAYOUT TOKENS ===== */
+    :root {
+      --color-bg: #0a0a0a;
+      --color-surface: #1a1a1a;
+      --color-accent: #ff2a6d;
+      --color-accent2: #05d9e8;
+      --color-text: #e0e0e0;
+      --color-muted: #888;
+      --spacing-unit: 1.5rem;
+      --max-width: 1200px;
+      --border-thick: 4px;
+    }
+
+    /* ===== BRUTAL EL (patterns) ===== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-unit);
+    }
+
+    /* ---------- NAV (nav-present, hamburger-menu, responsive-768, tel-link) ---------- */
+    nav {
+      background: var(--color-surface);
+      border-bottom: var(--border-thick) solid var(--color-accent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-logo a {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--color-accent2);
+      text-shadow: 2px 2px 0 var(--color-accent);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.25rem 0.5rem;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      border-color: var(--color-accent2);
+      color: var(--color-accent2);
+    }
+    .tel-link {
+      background: var(--color-accent);
+      color: #0a0a0a !important;
+      padding: 0.5rem 1rem !important;
+      border: none !important;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .tel-link:hover {
+      background: #05d9e8 !important;
+      color: #0a0a0a !important;
+    }
+    /* hamburger menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger span {
+      width: 30px;
+      height: 4px;
+      background: var(--color-accent2);
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 1rem;
+        gap: 0.75rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+      nav {
+        padding: 0.75rem 1rem;
+      }
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
+      border-bottom: 6px solid var(--color-accent2);
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--color-muted);
+    }
+    .cta-button {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #0a0a0a;
+      padding: 0.75rem 2.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 4px solid var(--color-accent);
+      transition: 0.2s;
+    }
+    .cta-button:hover {
+      background: transparent;
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    /* ---------- SECTION ---------- */
+    section {
+      padding: 3rem 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .section-title h2 {
+      border-bottom: 4px solid var(--color-accent);
+      padding-bottom: 0.5rem;
+    }
+
+    /* ---------- CARDS ---------- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--color-surface);
+      border: 3px solid var(--color-accent);
+      padding: 2rem;
+      transition: 0.2s;
+    }
+    .card:hover {
+      border-color: var(--color-accent2);
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      color: var(--color-accent2);
+      margin-bottom: 0.75rem;
+    }
+    .card p {
+      color: var(--color-text);
+      margin-bottom: 0;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border: 2px solid var(--color-accent);
+      margin-bottom: 1rem;
+      padding: 1rem 1.5rem;
+      background: var(--color-surface);
+    }
+    .faq-item strong {
+      color: var(--color-accent2);
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--color-surface);
+      border-top: 4px solid var(--color-accent2);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: auto;
+    }
+    footer p {
+      margin-bottom: 0;
+      color: var(--color-muted);
+    }
+    footer a {
+      color: var(--color-accent);
+    }
+
+    /* ---------- UTILITY ---------- */
+    .text-center { text-align: center; }
+    .mb-1 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .mt-2 { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="nav-logo">
+    <a href="/">SF-T3</a>
+  </div>
+  <div class="hamburger" onclick="this.nextElementSibling.classList.toggle('show')">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="nav-links">
+    <a href="/">홈</a>
+    <a href="/info" style="border-color: var(--color-accent2);">정보</a>
+    <a href="/서비스">서비스</a>
+    <a href="/연락">연락</a>
+    <a href="tel:010-6279-0862" class="tel-link">📞 010-6279-0862</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="container">
+    <h1>서버 웜업의&nbsp;진짜 정보</h1>
+    <p>마포에서 강남 셔츠룸 인프라까지. 규칙을 깨는 최적화, 여기 있다.</p>
+    <a href="tel:010-6279-0862" class="cta-button">지금 전화: 010-6279-0862</a>
+  </div>
+</header>
+
+<!-- ===== SECTION: 핵심 정보 ===== -->
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>왜 SF-T3인가?</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🔥 마포 거점, 전국 커버</h3>
+        <p>마포 서버실에서 직접 웜업. 강남 셔츠룸, 홍대, 종로 어디든 30분 내 도착. 지연은 사치다.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ 속도가 곧 매출</h3>
+        <p>셔츠룸 인프라에서 0.1초 차이가 고객 이탈을 결정한다. 우리는 밀리초를 깎는다.</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ 무정지 보장</h3>
+        <p>트래픽 폭주? 서버 폭발? 없다. 우리 웜업은 네온사인처럼 꺼지지 않는다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION: 상세 정보 ===== -->
+<section style="background: var(--color-surface); border-top: 4px solid var(--color-accent2); border-bottom: 4px solid var(--color-accent2);">
+  <div class="container">
+    <div class="section-title">
+      <h2>강남 셔츠룸을 위한 서버 웜업</h2>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto;">
+      <p>강남 셔츠룸의 피크타임. 예약 시스템, 조명 제어, 음악 큐 — 모든 게 실시간으로 움직여야 한다. 우리는 마포에서 서버를 미리 가열해 둔다. <strong>냉각? 필요 없어. 불타오르게 만든다.</strong></p>
+      <p>일반적인 웜업 서비스는 "느린" 최적화를 판다. SF-T3는 다르다. 우리는 서버를 <em>각성</em>시킨다. 규칙을 깨고, 쓰레드 수를 밀어붙여. 결과? <span style="color: var(--color-accent2);">응답 시간 40% 단축, 서버 비용 25% 절감.</span> 증거를 원하면 전화해.</p>
+      <blockquote>"강남 셔츠룸 세 곳을 동시에 운영하는데, SF-T3 도입 후 시스템 다운이 사라졌어. 
+      그리고 웜업 속도가 미친 듯이 빨라졌다." — 익명의 운영자</blockquote>
+    </div>
+  </div>
+</
+</body>
+</html>
